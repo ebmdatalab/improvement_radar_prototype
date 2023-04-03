@@ -14,6 +14,8 @@
 #     name: python3
 # ---
 
+# # Practice level change detection for all OpenPrescribing measures
+
 from ebmdatalab import bq
 from change_detection import functions as chg
 import os
@@ -43,9 +45,9 @@ for i in file:
         json_df = pd.concat([json_df,norm_df], axis=0, ignore_index=True) #adds row to final dataframe
 name_df = json_df[['measure_name','name']] #creates new df with just measure_name and descriptive name
 
-# ## Run Change Detection module on all data at SICBL (formerly CCG) level
+# ## Run Change Detection module on all data at practice level
 
-lp = chg.ChangeDetection('ccg_data_%', measure=True) #ccg_data_ will run all current measures in the database
+lp = chg.ChangeDetection('practice_data_%', measure=True) #ccg_data_ will run all current measures in the database
 lp.run()
 
 # ## Create one single dataframe for all change detection calculations
@@ -54,8 +56,6 @@ lp_spark  = lp.concatenate_outputs()
 lp_spark.head()
 
 # ## Create sparkline and details of change for each measure
-
-
 
 tables_df = pd.read_csv('data/ccg_data_/measure_list.csv') #open measure list from import
 tables_df = tables_df.merge(name_df, how = 'left', left_on='table_id', right_on='ccg_data_' + name_df['measure_name']) #merge with title names from JSON scraper
