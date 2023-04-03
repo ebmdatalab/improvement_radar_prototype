@@ -1,0 +1,16 @@
+"","name","is.nbreak","is.tfirst","is.tfirst.pknown","is.tfirst.pknown.offs","is.tfirst.offs","is.tfirst.big","is.slope.ma","is.slope.ma.prop","is.slope.ma.prop.lev","is.intlev.initlev","is.intlev.finallev","is.intlev.levd","is.intlev.levdprop"
+"1","ratio_quantity.05V",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"2","ratio_quantity.05W",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"3","ratio_quantity.06H",1,26,26,26,26,26,-0.000270173093489478,-0.0154395792498069,0.527777777777778,0.0177689072959035,0.00804267593028225,0.00972623136562121,0.547373634385697
+"4","ratio_quantity.06K",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"5","ratio_quantity.06L",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"6","ratio_quantity.06N",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"7","ratio_quantity.06Q",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"8","ratio_quantity.06T",15,2,2,2,2,12,-0.0198352405515879,-0.871771219267557,4.82012474228725,0.0113793476220025,0.00726425898589937,0.00411508863610314,0.361627816707736
+"9","ratio_quantity.07G",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"10","ratio_quantity.07H",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"11","ratio_quantity.07K",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"12","ratio_quantity.09D",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"13","ratio_quantity.10Q",2,8,8,8,8,8,-0.000772108102284794,-0.060427416155553,0.547391478281361,0.0135495550197109,0.00226537347258159,0.0112841815471293,0.832808275306009
+"14","ratio_quantity.10R",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"15","ratio_quantity.11J",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

@@ -21,3 +21,4 @@ ipywidgets
 
 # Add extra per-notebook packages here
 change_detection
+bs4

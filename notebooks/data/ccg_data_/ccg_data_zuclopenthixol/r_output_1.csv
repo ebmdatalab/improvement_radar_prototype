@@ -1,0 +1,6 @@
+"","name","is.nbreak","is.tfirst","is.tfirst.pknown","is.tfirst.pknown.offs","is.tfirst.offs","is.tfirst.big","is.slope.ma","is.slope.ma.prop","is.slope.ma.prop.lev","is.intlev.initlev","is.intlev.finallev","is.intlev.levd","is.intlev.levdprop"
+"1","ratio_quantity.06L",3,24,24,25,25,25,-0.0416666666666667,-1,130539119633927,5.68597968410671e-17,0,5.68597968410671e-17,1
+"2","ratio_quantity.06T",6,4,4,5,5,25,-0.0250000000000001,-1.14999999999999,48038396025285.4,3.41158781046403e-16,2.22044604925031e-16,1.19114176121371e-16,0.349145860341112
+"3","ratio_quantity.07K",12,2,2,3,3,5,-0.250000000000003,-12492648064828.2,1.45261596394145,0.166666666666652,0.000313563760145463,0.166353102906507,0.998118617439127
+"4","ratio_quantity.10Q",3,14,14,15,15,14,0.0208333333333333,1,250199979298360,0,0,0,NA
+"5","ratio_quantity.11J",0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
