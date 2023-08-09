@@ -1,0 +1,84 @@
+measure_name,name
+aafpercent,Prescribing of Amino Acid Formula (AAF) and Extensively Hydrolysed Formula (EHF))
+ace,High-cost Angiotensin-Converting Enzyme (ACE) inhibitors
+amox_500_15_caps,Antibiotic stewardship: courses for amoxicillin 500mg greater than 15 capsules
+bdzadq,Anxiolytics and Hypnotics: Average Daily Quantity per item
+bdzper1000,Anxiolytics and Hypnotics: Average Daily Quantity per 1000 patients
+carbon_salbutamol,Environmental impact of inhalers - average carbon footprint per salbutamol inhaler
+cgm_sensors,Prescribing of continuous glucose monitoring sensors
+ciclosporin,Ciclosporin and tacrolimus oral preparations prescribed generically
+cmpaperpt,Cost of milk formulae for Cow's Milk Protein Allergy (CMPA) per listed patients aged 0-4
+coproxamol,Co-proxamol
+desogestrel,Desogestrel prescribed as a branded product
+diltiazem,Diltiazem preparations (>60mg) prescribed generically
+dipyridamole,Prescribing of dipyridamole
+doacs,Direct Oral Anticoagulants (DOACs)
+edoxaban,Proportion of Direct Acting Oral Anticoagulants (DOACs) not prescribed as edoxaban
+environmental_inhalers,Environmental impact of inhalers - prescribing of non-salbutamol Metered Dose Inhalers (MDIs)
+fungal,Topical treatment of fungal nail infections
+gabapentinoidsddd,Prescribing of gabapentin and pregabalin (DDD)
+glaucoma,Glaucoma eye drops prescribed by brand
+glutenfree,Prescribing of gluten free products
+icsdose,High dose inhaled corticosteroids
+injectable_antibiotics,Antibiotic stewardship: Injectable preparations for the treatment of infection
+keppra,Levetiracetam prescribed as Keppra
+ktt12_diabetes_insulin,Long-acting insulin analogues (KTT12)
+ktt13_nsaids_ibuprofen,Non-preferred NSAIDs and COX-2 inhibitors (KTT13)
+ktt9_antibiotics,Antibiotic stewardship: volume of antibiotic prescribing (KTT9)
+ktt9_cephalosporins,"Antibiotic stewardship: co-amoxiclav, cephalosporins & quinolones (KTT9)"
+ktt9_cephalosporins_star,"Antibiotic stewardship: co-amoxiclav, cephalosporins & quinolones (KTT9) prescribing volume"
+lpaliskiren,NHS England Low Priority Treatment - Aliskiren
+lpamiodarone,NHS England Low Priority Treatment - Amiodarone
+lpbathshoweremollients,NHS England Low Priority Treatment - Bath and Shower emollients
+lpcoprox,NHS England Low Priority Treatment - co-proxamol
+lpdosulepin,NHS England Low Priority Treatment - dosulepin
+lpdoxazosin,NHS England Low Priority Treatment - doxazosin modified release
+lpdronedarone,NHS England Low Priority Treatment - Dronedarone
+lpfentanylir,NHS England Low Priority Treatment - fentanyl immediate release
+lpglucosamine,NHS England Low Priority Treatment - glucosamine and chondroitin
+lpherbal,NHS England Low Priority Treatment - herbal medicines
+lphomeopathy,NHS England Low Priority Treatment - homeopathy
+lplidocaine,NHS England Low Priority Treatment - lidocaine plasters
+lpliothyronine,NHS England Low Priority Treatment - liothyronine (including Armour Thyroid and liothyronine combination products)
+lplutein,NHS England Low Priority Treatment - lutein and antioxidants
+lpminocycline,NHS England Low Priority Treatment - Minocycline
+lpneedles,NHS England Low Priority Treatment - Higher Cost Insulin Pen Needles
+lpomega3,NHS England Low Priority Treatment - omega-3 fatty acid compounds
+lpoxycodone,NHS England Low Priority Treatment - oxycodone and naloxone combination product
+lpperindopril,NHS England Low Priority Treatment - perindopril arginine
+lprubefacients,NHS England Low Priority Treatment - rubefacients
+lpsilkgarments,NHS England Low Priority Treatment - Silk Garments
+lptadalafil,NHS England Low Priority Treatment - tadalafil once daily
+lptramadolpara,NHS England Low Priority Treatment - paracetamol and tramadol combination
+lptravelvacs,NHS England Low Priority Treatment - travel vaccines
+lptrimipramine,NHS England Low Priority Treatment - trimipramine
+lpzomnibus,NHS England Low Priority Treatment - All Low Priority Treatments
+lyrica,Pregabalin capsules prescribed as Lyrica
+methotrexate,Methotrexate 10 mg tablets 
+nhse_bgts,Blood glucose testing strips not included in NHS England commissioning recommendations
+nhse_lancets,Blood glucose testing lancets not included in NHS England commissioning recommendations
+nimodipine,Prescribing of nimodipine
+opioidome,Prescribing of opioids (total oral morphine equivalence)
+opioidper1000,High dose opioids per 1000 patients
+opioidspercent,High dose opioid items as percentage regular opioids
+other_lipid_modifying_drugs,Other lipid-modifying drugs
+ppi,High-cost PPIs
+ppidose,Higher dose Proton Pump Inhibitors (PPIs)
+pregabalinmg,Prescribing of pregabalin (total mg)
+probiotics,Probiotics that have been removed from the drug tariff
+saba,Short acting beta agonist inhalers
+semagglutidequantity,Possible excess quantities of semaglutide
+seven_day_prescribing,Seven Day Prescribing for Long Term Conditions
+sildenafil,High-cost drugs for erectile dysfunction
+silver,Silver dressings
+solublepara,Soluble/effervescent forms of paracetamol and co-codamol
+statinintensity,Low and medium intensity statins
+tamoxifen,Prescribing of tamoxifen
+toothpaste,Toothpaste Prescribing
+tramadol,Prescribing of high cost tramadol preparations 
+trimethoprim,Antibiotic stewardship: prescribing of trimethoprim vs nitrofurantoin
+ulipristal,Ulipristal acetate 5mg prescribing for uterine fibroids
+uti_antibiotics_3_day,Antibiotic stewardship: three-day courses for uncomplicated UTIs
+vitb,Vitamin B vs thiamine
+vitbper1000,Vitamin B complex per 1000 patients
+zuclopenthixol,Zuclopenthixol acetate prescribing in primary care
