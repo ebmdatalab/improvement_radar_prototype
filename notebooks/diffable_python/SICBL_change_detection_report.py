@@ -12,6 +12,9 @@
 #     display_name: Python 3
 #     language: python
 #     name: python3
+#   vscode:
+#     interpreter:
+#       hash: 692be894feba73f0646533f6ae9a20606d08b65b9e0f7c2d28298b63f25cbb72
 # ---
 
 # +
@@ -202,10 +205,11 @@ DEFAULT_CONFIG = {
     'drop_ends_high_quantile': 0.9,
     'apply_high_filter': True,
     'apply_mean_difference_filter': True,
-    'mean_difference_threshold': 0.2,
+    'mean_difference_threshold': 0.4,
     'apply_zero_filter': True,
     'apply_mean_events_filter': True,
-    'mean_events_threshold': 0
+    'mean_events_threshold': 0,
+    'top_x': 5
 }
 
 
@@ -328,8 +332,8 @@ class DataFrameProcessor:
         """Apply configured filters to the list of orgs."""
         initial_count = len(self.df_secondary)
         self._get_filtered_df()
-      
-        filtered_orgs = self.df_secondary['name'].unique().tolist()
+        
+        filtered_orgs = self.df_secondary['name'].unique()
 
         if self.config.get('apply_high_filter', False):
             initial_count = len(filtered_orgs)
@@ -352,7 +356,12 @@ class DataFrameProcessor:
             initial_count = len(filtered_orgs)
             filtered_orgs = self._filter_orgs_going_to_zero(filtered_orgs)
             self._print_change_counts(initial_count, filtered_orgs, "Drops to zero")
-
+        
+        # order by
+        self.df_secondary = self.df_secondary.loc[self.df_secondary["name"].isin(filtered_orgs)]
+      
+        filtered_orgs = self.df_secondary['name'].unique().tolist()[:self.config.get("top_x")]
+        
         return filtered_orgs
 
 
@@ -362,42 +371,19 @@ config = {
     'show_cd': False,
     'show_filter_results': False,
     'goes_down': True,
-    'goes_down_threshold': 0.1,
+    'goes_down_threshold': 0.2,
     'drop_starts_high': True,
     'drop_starts_high_quantile': 0.8,
     'drop_ends_high': True,
-    'drop_ends_high_quantile': 0.8,
+    'drop_ends_high_quantile': 0.4,
     'apply_high_filter': True,
     'apply_mean_difference_filter': True,
     'mean_difference_threshold': 0.2,
     'apply_zero_filter': True,
     'apply_mean_events_filter': True,
-    'mean_events_threshold': 20
+    'mean_events_threshold': 20,
+    'top_x': 5
 }
-
-# ## Filters
-#
-# We're filtering out  units of interest based on both change detection results and a units percentile value.
-#
-# Filters based on change detection:
-#
-# * Detected change is negative, and proportional drop is > threshold.
-# * Initial level of detected change is > chosen quantile.
-# * Final level of detected change is > chosen quantile.
-#
-# Filters based on percentile values:
-#
-# * Whether a unit remains is in a percentile at the start and end of the period (based on first/last 6 months).
-# * Whether a unit drops percentile value > a threshold (based on first/last 6 months).
-#
-# Filters based on event counts:
-#
-# * Whether a unit has monthly average number of events is > threshold.
-#
-#
-# TODO:
-#
-# * Think about initial/final level for cd - I don't think this capture what we want. 
 
 # +
 ccg_names = pd.read_csv("data/ccg_names.csv")
@@ -445,11 +431,11 @@ for m in measures:
         num_orgs_identified = len(filtered_ccgs)
         # Main loop to plot CCG data
         if num_orgs_identified > 0:
-            display(Markdown(f"Number of organisations with improvement identified: {num_orgs_identified}"))
+#             display(Markdown(f"Number of organisations with improvement identified: {num_orgs_identified}"))
             for ccg in filtered_ccgs:
                 sicbl_link = f"https://openprescribing.net/measure/{m}/sicbl/{ccg}"
                 ccg_name = ccg_names.loc[ccg_names["code"]==ccg, "name"].values[0]
-                display(Markdown(f'<h4><a href={sicbl_link}>{ccg_name}</a></h3>'))
+                display(Markdown(f'<h4><a href={sicbl_link}>{ccg_name}</a></h4>'))
                 fig = plot_org_data(ccg, data, deciles, cd_data, show_cd=config.get('show_cd', False))
                 
              
