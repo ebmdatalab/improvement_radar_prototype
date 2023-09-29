@@ -410,7 +410,7 @@ display(Markdown("""* SICBLs needed to be in the highest 20% at the start of the
 display(Markdown("""* SICBLs needed to improve to the lowest 40% of SICBLs at the end of the change"""))
 display(Markdown("""* SICBLs needed to improve by at least 20 percentiles"""))
 display(Markdown("""* There needed to be at least 20 prescription items written"""))
-display(Markdown("""This version is currently identifying a maximum of 5 SICBLs that have the largest improvement for each measure whencompared to other organisations.
+display(Markdown("""This version is currently identifying a maximum of 5 SICBLs that have the largest improvement for each measure when compared to other organisations.
                     We hope this information is useful to our users, in order to stimulate discussion with SICBLs who have successful made changes, so that learning can be shared.
                     You can find more information of the trend indicator saturation methodology we use [here](https://www.bmj.com/content/367/bmj.l5205), including a podcast on our work with Professor Ben Goldacre."""))    
 
@@ -460,6 +460,6 @@ for m in measures:
              
         else:
             display(Markdown("No organisations identified for this measure."))
-# -
+# +
 
 
