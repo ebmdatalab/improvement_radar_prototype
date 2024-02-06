@@ -459,7 +459,7 @@ for m in measures:
                 
              
         else:
-            display(Markdown("No organisations identified for this measure."))
-# +
+            display(Markdown("No organisations met the technical criteria for detecting substantial change on this measure."))
+# -
 
 
