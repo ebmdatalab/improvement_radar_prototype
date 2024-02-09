@@ -393,27 +393,29 @@ measure_info = get_measures_info(CONTENT_URL)
 
 measure_list = measure_list.merge(measure_info, how = 'left', left_on='table_id', right_on='ccg_data_' + measure_info['measure_name']) #merge with title names from JSON scraper
 measures = [m.replace("ccg_data_", "") for m in measure_list["table_id"]]
+# -
+
+# # OpenPrescribing Improvement Radar
+#
+# ## What this tool does
+# This tool identifies sub-ICB locations (SICBLs) which have shown substantial improvement across each of our OpenPrescribing measures. The five SICBLs with the largest improvement are reported. We hope this will stimulate discussion with areas that have made effective changes so that successful strategies can be shared.
+#
+# ## How it works
+# We used trend indicator saturation to detect the timing and size of changes of SICBLs against all SICBLs in England. This prototype uses the current criteria to identify improvement:
+# * SICBLs needed to be in the highest 20% at the start of the change
+# * SICBLs needed to improve to the lowest 40% of SICBLs at the end of the change
+# * SICBLs needed to improve by at least 20 percentiles
+# * There needed to be at least 20 prescription items written
+#
+# You can find more information on the trend indicator saturation methodology we use [here](https://www.bmj.com/content/367/bmj.l5205), including a podcast on our work with Professor Ben Goldacre.
+#
+# ## Interpretation notes
+# These pilot results are provided for the interest of advanced users, although we don't know how relevant they are in practice. There is substantial variation in prescribing behaviours, across various different areas of medicine. Some variation can be explained by demographic changes, or local policies or guidelines, but much of the remaining variation is less easy to explain.
+#
+# We are keen to hear your feedback on this tool and how you use it. You can do this by emailing us at bennett@phc.ox.ac.uk. Please do not include patient identifiable information in your feedback.
+#
 
 # +
-display(Markdown("# OpenPrescribing improvement detection"))
-
-display(Markdown("""At OpenPrescribing we are piloting a number of data-driven approaches to identify unusual prescribing and collect feedback on this prescribing to inform 
-                    development of new tools to support prescribers and organisations to audit and review prescribing. These pilot results are provided for the interest of advanced users, 
-                    although we don't know how relevant they are in practice. There is substantial variation in prescribing behaviours, across various different areas of medicine. 
-                    Some variation can be explained by demographic changes, or local policies or guidelines, but much of the remaining variation is less easy to explain."""))
-display(Markdown("""The Bennett Institute is keen to hear your feedback on the results. You can do this by completing the following survey or emailing us at bennett@phc.ox.ac.uk. 
-                    Please DO NOT INCLUDE IDENTIFIABLE PATIENT information in your feedback. All feedback is helpful, you can send short or detailed feedback."""))
-display(Markdown("""This report has been designed to automatically detect where sub-ICB level organisations (SICBLs) have made significant improvements in their performance on OpenPrescribing.net's prescribing measures.
-                    To do this we used trend indicator saturation to detect the timing and size of changes of SICBLs against all SICBLs in England."""))
-display(Markdown("""This prototype uses the current criteria to identify improvement:"""))
-display(Markdown("""* SICBLs needed to be in the highest 20% at the start of the change"""))
-display(Markdown("""* SICBLs needed to improve to the lowest 40% of SICBLs at the end of the change"""))
-display(Markdown("""* SICBLs needed to improve by at least 20 percentiles"""))
-display(Markdown("""* There needed to be at least 20 prescription items written"""))
-display(Markdown("""This version is currently identifying a maximum of 5 SICBLs that have the largest improvement for each measure when compared to other organisations.
-                    We hope this information is useful to our users, in order to stimulate discussion with SICBLs who have successful made changes, so that learning can be shared.
-                    You can find more information of the trend indicator saturation methodology we use [here](https://www.bmj.com/content/367/bmj.l5205), including a podcast on our work with Professor Ben Goldacre."""))    
-
 display(Markdown('## Table of Contents'))
 
 for m in measures:
@@ -459,7 +461,7 @@ for m in measures:
                 
              
         else:
-            display(Markdown("No organisations identified for this measure."))
+            display(Markdown("No organisations met the technical criteria for detecting substantial change on this measure."))
 # +
 
 
