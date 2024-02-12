@@ -1,70 +1,70 @@
-table_id,name,tags,radar_exclude,is_percentage,measure_name
-ccg_data_aafpercent,Prescribing of Amino Acid Formula (AAF) and Extensively Hydrolysed Formula (EHF)),core,,True,aafpercent
-ccg_data_amox_500_15_caps,Antibiotic stewardship: courses for amoxicillin 500mg greater than 15 capsules,core,False,True,amox_500_15_caps
-ccg_data_bdzadq,Anxiolytics and Hypnotics: Average Daily Quantity per item,core,,False,bdzadq
-ccg_data_bdzper1000,Anxiolytics and Hypnotics: Average Daily Quantity per 1000 patients,core,,False,bdzper1000
-ccg_data_carbon_salbutamol,Environmental impact of inhalers - average carbon footprint per salbutamol inhaler,core,False,False,carbon_salbutamol
-ccg_data_cgm_sensors,Prescribing of continuous glucose monitoring sensors,core,True,False,cgm_sensors
-ccg_data_ciclosporin,Ciclosporin and tacrolimus oral preparations prescribed generically,core,,True,ciclosporin
-ccg_data_cmpaperpt,Cost of milk formulae for Cow's Milk Protein Allergy (CMPA) per listed patients aged 0-4,core,,False,cmpaperpt
-ccg_data_coproxamol,Co-proxamol,core,,False,coproxamol
-ccg_data_diltiazem,Diltiazem preparations (>60mg) prescribed generically,core,,True,diltiazem
-ccg_data_dipyridamole,Prescribing of dipyridamole,core,,True,dipyridamole
-ccg_data_doxy_100_6_qty,Antibiotic stewardship: courses for doxycycline 100mg greater than 6 capsules/dispersible tablets,core,,True,doxy_100_6_qty
-ccg_data_edoxaban,Proportion of Direct Acting Oral Anticoagulants (DOACs) not prescribed as edoxaban or generic apixaban,core,False,True,edoxaban
-ccg_data_environmental_inhalers,Environmental impact of inhalers - prescribing of non-salbutamol Metered Dose Inhalers (MDIs),core,false,True,environmental_inhalers
-ccg_data_fungal,Topical treatment of fungal nail infections,core,,False,fungal
-ccg_data_gabapentinoidsddd,Prescribing of gabapentin and pregabalin (DDD),core,,False,gabapentinoidsddd
-ccg_data_glutenfree,Prescribing of gluten free products,core,,False,glutenfree
-ccg_data_icsdose,High dose inhaled corticosteroids,core,,True,icsdose
-ccg_data_injectable_antibiotics,Antibiotic stewardship: Injectable preparations for the treatment of infection,core,,False,injectable_antibiotics
-ccg_data_ktt12_diabetes_insulin,Long-acting insulin analogues (KTT12),core,,True,ktt12_diabetes_insulin
-ccg_data_ktt13_nsaids_ibuprofen,Non-preferred NSAIDs and COX-2 inhibitors (KTT13),core,,True,ktt13_nsaids_ibuprofen
-ccg_data_ktt9_antibiotics,Antibiotic stewardship: volume of antibiotic prescribing (KTT9),core,,False,ktt9_antibiotics
-ccg_data_ktt9_cephalosporins,"Antibiotic stewardship: co-amoxiclav, cephalosporins & quinolones (KTT9)",core,,True,ktt9_cephalosporins
-ccg_data_ktt9_cephalosporins_star,"Antibiotic stewardship: co-amoxiclav, cephalosporins & quinolones (KTT9) prescribing volume",core,,False,ktt9_cephalosporins_star
-ccg_data_lpaliskiren,Items which should not routinely be prescribed in primary care - aliskiren,lowpriority,False,False,lpaliskiren
-ccg_data_lpamiodarone,Items which should not routinely be prescribed in primary care - amiodarone,lowpriority,False,False,lpamiodarone
-ccg_data_lpbathshoweremollients,Items which should not routinely be prescribed in primary care  - bath and shower emollients,lowpriority,False,False,lpbathshoweremollients
-ccg_data_lpcoprox,Items which should not routinely be prescribed in primary care - co-proxamol,lowpriority,False,False,lpcoprox
-ccg_data_lpdosulepin,Items which should not routinely be prescribed in primary care - dosulepin,lowpriority,False,False,lpdosulepin
-ccg_data_lpdoxazosin,Items which should not routinely be prescribed in primary care - doxazosin modified release,lowpriority,False,False,lpdoxazosin
-ccg_data_lpdronedarone,Items which should not routinely be prescribed in primary care - dronedarone,lowpriority,False,False,lpdronedarone
-ccg_data_lpfentanylir,Items which should not routinely be prescribed in primary care - immediate release fentanyl,lowpriority,False,False,lpfentanylir
-ccg_data_lpglucosamine,Items which should not routinely be prescribed in primary care - glucosamine and chondroitin,lowpriority,False,False,lpglucosamine
-ccg_data_lpherbal,Items which should not routinely be prescribed in primary care - herbal medicines,lowpriority,False,False,lpherbal
-ccg_data_lphomeopathy,Items which should not routinely be prescribed in primary care - homeopathy,lowpriority,False,False,lphomeopathy
-ccg_data_lplidocaine,Items which should not routinely be prescribed in primary care - lidocaine plasters,lowpriority,False,False,lplidocaine
-ccg_data_lpliothyronine,Items which should not routinely be prescribed in primary care - liothyronine (including Armour Thyroid and liothyronine combination products),lowpriority,False,False,lpliothyronine
-ccg_data_lplutein,Items which should not routinely be prescribed in primary care - lutein and antioxidants,lowpriority,False,False,lplutein
-ccg_data_lpminocycline,Items which should not routinely be prescribed in primary care - minocycline,lowpriority,False,False,lpminocycline
-ccg_data_lpneedles,Items which should not routinely be prescribed in primary care - insulin pen needles costing ≥£5 per 100 needles,lowpriority,False,False,lpneedles
-ccg_data_lpomega3,Items which should not routinely be prescribed in primary care - omega-3 fatty acid compounds (excluding icosapent ethyl [Vazkepa®]),lowpriority,False,False,lpomega3
-ccg_data_lpoxycodone,Items which should not routinely be prescribed in primary care - oxycodone and naloxone combination product,lowpriority,False,False,lpoxycodone
-ccg_data_lpperindopril,Items which should not routinely be prescribed in primary care - perindopril arginine,lowpriority,False,False,lpperindopril
-ccg_data_lprubefacients,"Items which should not routinely be prescribed in primary care - rubefacients, benzydamine, mucopolysaccharide and cooling products",lowpriority,False,False,lprubefacients
-ccg_data_lpsilkgarments,Items which should not routinely be prescribed in primary care - silk garments,lowpriority,False,False,lpsilkgarments
-ccg_data_lptramadolpara,Items which should not routinely be prescribed in primary care - paracetamol and tramadol combination,lowpriority,False,False,lptramadolpara
-ccg_data_lptravelvacs,Items which should not routinely be prescribed in primary care - travel vaccines,lowpriority,False,False,lptravelvacs
-ccg_data_lptrimipramine,Items which should not routinely be prescribed in primary care - trimipramine,lowpriority,False,False,lptrimipramine
-ccg_data_lpzomnibus,Items which should not routinely be prescribed in primary care - all items,core,False,False,lpzomnibus
-ccg_data_methotrexate,Methotrexate 10 mg tablets ,core,,True,methotrexate
-ccg_data_nhse_bgts,Blood glucose testing strips not included in NHS England commissioning recommendations,core,,True,nhse_bgts
-ccg_data_nhse_lancets,Blood glucose testing lancets not included in NHS England commissioning recommendations,core,,True,nhse_lancets
-ccg_data_opioidome,Prescribing of opioids (total oral morphine equivalence),core,false,False,opioidome
-ccg_data_opioidper1000,High dose opioids per 1000 patients,core,False,False,opioidper1000
-ccg_data_opioidspercent,High dose opioid items as percentage regular opioids,core,False,True,opioidspercent
-ccg_data_other_lipid_modifying_drugs,"Bile acid sequestrants, fibrates, nicotinic acid, and omega 3 fatty acids",core,false,False,other_lipid_modifying_drugs
-ccg_data_ppidose,Higher dose Proton Pump Inhibitors (PPIs),core,,True,ppidose
-ccg_data_pregabalinmg,Prescribing of pregabalin (total mg),core,,False,pregabalinmg
-ccg_data_probiotics,Probiotics that have been removed from the drug tariff,core,,False,probiotics
-ccg_data_saba,Short acting beta agonist inhalers,core,false,True,saba
-ccg_data_semagglutidequantity,Possible excess quantities of semaglutide,core,,True,semagglutidequantity
-ccg_data_seven_day_prescribing,Seven Day Prescribing for Long Term Conditions,core,,True,seven_day_prescribing
-ccg_data_sildenafil,High-cost drugs for erectile dysfunction,core,,True,sildenafil
-ccg_data_silver,Silver dressings,core,,True,silver
-ccg_data_solublepara,Soluble/effervescent forms of paracetamol and co-codamol,core,,True,solublepara
-ccg_data_statinintensity,Low and medium intensity statins,core,,True,statinintensity
-ccg_data_toothpaste,Toothpaste Prescribing,core,,False,toothpaste
-ccg_data_uti_antibiotics_3_day,Antibiotic stewardship: three-day courses for uncomplicated UTIs,core,,True,uti_antibiotics_3_day
-ccg_data_vitbper1000,Vitamin B complex per 1000 patients,core,,False,vitbper1000
+table_id,name,tags,radar_exclude,is_percentage,numerator_short,denominator_short,measure_name,y_string
+ccg_data_aafpercent,Prescribing of Amino Acid Formula (AAF) and Extensively Hydrolysed Formula (EHF)),core,,True,AAF quantity (grams),AAF and EHF quantity (grams),aafpercent,AAF quantity (grams) per AAF and EHF quantity (grams)
+ccg_data_amox_500_15_caps,Antibiotic stewardship: courses for amoxicillin 500mg greater than 15 capsules,core,False,True,amoxicillin capsules 500mg items for greater than 15 caps,amoxicillin capsules 500mg items,amox_500_15_caps,amoxicillin capsules 500mg items for greater than 15 caps per amoxicillin capsules 500mg items
+ccg_data_bdzadq,Anxiolytics and Hypnotics: Average Daily Quantity per item,core,,False,Anxiolytics and Hypnotics ADQ,Prescription items,bdzadq,Anxiolytics and Hypnotics ADQ per Prescription items
+ccg_data_bdzper1000,Anxiolytics and Hypnotics: Average Daily Quantity per 1000 patients,core,,False,Anxiolytics and Hypnotics ADQ,1000 Patients,bdzper1000,Anxiolytics and Hypnotics ADQ per 1000 Patients
+ccg_data_carbon_salbutamol,Environmental impact of inhalers - average carbon footprint per salbutamol inhaler,core,False,False,Carbon impact (kg CO<sub>2</sub>e),Salbutamol inhalers,carbon_salbutamol,Carbon impact (kg CO<sub>2</sub>e) per Salbutamol inhalers
+ccg_data_cgm_sensors,Prescribing of continuous glucose monitoring sensors,core,True,False,Continuous glucose monitoring sensor quantity,1000 patients,cgm_sensors,Continuous glucose monitoring sensor quantity per 1000 patients
+ccg_data_ciclosporin,Ciclosporin and tacrolimus oral preparations prescribed generically,core,,True,Generic ciclosporin and tacrolimus items,Ciclosporin and tacrolimus items,ciclosporin,Generic ciclosporin and tacrolimus items per Ciclosporin and tacrolimus items
+ccg_data_cmpaperpt,Cost of milk formulae for Cow's Milk Protein Allergy (CMPA) per listed patients aged 0-4,core,,False,AAF cost (£),Listed patients aged 0-4,cmpaperpt,AAF cost (£) per Listed patients aged 0-4
+ccg_data_coproxamol,Co-proxamol,core,,False,Co-proxamol items,1000 patients,coproxamol,Co-proxamol items per 1000 patients
+ccg_data_diltiazem,Diltiazem preparations (>60mg) prescribed generically,core,,True,Generic diltiazem items,Dilitazem items,diltiazem,Generic diltiazem items per Dilitazem items
+ccg_data_dipyridamole,Prescribing of dipyridamole,core,,True,Dipyridamole-containing items,Total items,dipyridamole,Dipyridamole-containing items per Total items
+ccg_data_doxy_100_6_qty,Antibiotic stewardship: courses for doxycycline 100mg greater than 6 capsules/dispersible tablets,core,,True,Doxycycline capsules/dispersible tablets 100mg items for greater than 6 caps/tabs,Doxycycline capsules/dispersible tablets 100mg items,doxy_100_6_qty,Doxycycline capsules/dispersible tablets 100mg items for greater than 6 caps/tabs per Doxycycline capsules/dispersible tablets 100mg items
+ccg_data_edoxaban,Proportion of Direct Acting Oral Anticoagulants (DOACs) not prescribed as edoxaban or generic apixaban,core,False,True,DOAC items not prescribed as edoxaban or generic apixaban,DOACs items,edoxaban,DOAC items not prescribed as edoxaban or generic apixaban per DOACs items
+ccg_data_environmental_inhalers,Environmental impact of inhalers - prescribing of non-salbutamol Metered Dose Inhalers (MDIs),core,false,True,MDI inhalers (items),All inhalers (items),environmental_inhalers,MDI inhalers (items) per All inhalers (items)
+ccg_data_fungal,Topical treatment of fungal nail infections,core,,False,Topical antifungal items,1000 patients,fungal,Topical antifungal items per 1000 patients
+ccg_data_gabapentinoidsddd,Prescribing of gabapentin and pregabalin (DDD),core,,False,Gabapentin total DDD prescribed + pregabalin total DDD prescribed,1000 patients,gabapentinoidsddd,Gabapentin total DDD prescribed + pregabalin total DDD prescribed per 1000 patients
+ccg_data_glutenfree,Prescribing of gluten free products,core,,False,Gluten-free products cost (£),1000 patients,glutenfree,Gluten-free products cost (£) per 1000 patients
+ccg_data_icsdose,High dose inhaled corticosteroids,core,,True,High dose ICS items,All ICS items,icsdose,High dose ICS items per All ICS items
+ccg_data_injectable_antibiotics,Antibiotic stewardship: Injectable preparations for the treatment of infection,core,,False,Items,1000 Patients,injectable_antibiotics,Items per 1000 Patients
+ccg_data_ktt12_diabetes_insulin,Long-acting insulin analogues (KTT12),core,,True,Selected items,Selected items,ktt12_diabetes_insulin,Selected items per Selected items
+ccg_data_ktt13_nsaids_ibuprofen,Non-preferred NSAIDs and COX-2 inhibitors (KTT13),core,,True,NSAID items (excl naproxen and ibuprofen),NSAID items,ktt13_nsaids_ibuprofen,NSAID items (excl naproxen and ibuprofen) per NSAID items
+ccg_data_ktt9_antibiotics,Antibiotic stewardship: volume of antibiotic prescribing (KTT9),core,,False,Antibacterials items,STAR-PUs,ktt9_antibiotics,Antibacterials items per STAR-PUs
+ccg_data_ktt9_cephalosporins,"Antibiotic stewardship: co-amoxiclav, cephalosporins & quinolones (KTT9)",core,,True,Selected items,Other selected items,ktt9_cephalosporins,Selected items per Other selected items
+ccg_data_ktt9_cephalosporins_star,"Antibiotic stewardship: co-amoxiclav, cephalosporins & quinolones (KTT9) prescribing volume",core,,False,Selected items,STAR-PUs,ktt9_cephalosporins_star,Selected items per STAR-PUs
+ccg_data_lpaliskiren,Items which should not routinely be prescribed in primary care - aliskiren,lowpriority,False,False,Aliskiren cost (£),1000 patients,lpaliskiren,Aliskiren cost (£) per 1000 patients
+ccg_data_lpamiodarone,Items which should not routinely be prescribed in primary care - amiodarone,lowpriority,False,False,Amiodarone cost (£),1000 patients,lpamiodarone,Amiodarone cost (£) per 1000 patients
+ccg_data_lpbathshoweremollients,Items which should not routinely be prescribed in primary care  - bath and shower emollients,lowpriority,False,False,Bath and Shower emollients cost (£),1000 patients,lpbathshoweremollients,Bath and Shower emollients cost (£) per 1000 patients
+ccg_data_lpcoprox,Items which should not routinely be prescribed in primary care - co-proxamol,lowpriority,False,False,Co-proxamol cost (£),1000 patients,lpcoprox,Co-proxamol cost (£) per 1000 patients
+ccg_data_lpdosulepin,Items which should not routinely be prescribed in primary care - dosulepin,lowpriority,False,False,Dosulepin cost (£),1000 patients,lpdosulepin,Dosulepin cost (£) per 1000 patients
+ccg_data_lpdoxazosin,Items which should not routinely be prescribed in primary care - doxazosin modified release,lowpriority,False,False,Doxazosin modified release cost (£),1000 patients,lpdoxazosin,Doxazosin modified release cost (£) per 1000 patients
+ccg_data_lpdronedarone,Items which should not routinely be prescribed in primary care - dronedarone,lowpriority,False,False,Dronedarone cost (£),1000 patients,lpdronedarone,Dronedarone cost (£) per 1000 patients
+ccg_data_lpfentanylir,Items which should not routinely be prescribed in primary care - immediate release fentanyl,lowpriority,False,False,Fentanyl immediate release cost (£),1000 patients,lpfentanylir,Fentanyl immediate release cost (£) per 1000 patients
+ccg_data_lpglucosamine,Items which should not routinely be prescribed in primary care - glucosamine and chondroitin,lowpriority,False,False,Glucosamine and chondroitin cost (£),1000 patients,lpglucosamine,Glucosamine and chondroitin cost (£) per 1000 patients
+ccg_data_lpherbal,Items which should not routinely be prescribed in primary care - herbal medicines,lowpriority,False,False,Herbal medicines cost (£),1000 patients,lpherbal,Herbal medicines cost (£) per 1000 patients
+ccg_data_lphomeopathy,Items which should not routinely be prescribed in primary care - homeopathy,lowpriority,False,False,Homeopathy cost (£),1000 patients,lphomeopathy,Homeopathy cost (£) per 1000 patients
+ccg_data_lplidocaine,Items which should not routinely be prescribed in primary care - lidocaine plasters,lowpriority,False,False,Lidocaine plasters cost (£),1000 patients,lplidocaine,Lidocaine plasters cost (£) per 1000 patients
+ccg_data_lpliothyronine,Items which should not routinely be prescribed in primary care - liothyronine (including Armour Thyroid and liothyronine combination products),lowpriority,False,False,Liothyronine cost (£),1000 patients,lpliothyronine,Liothyronine cost (£) per 1000 patients
+ccg_data_lplutein,Items which should not routinely be prescribed in primary care - lutein and antioxidants,lowpriority,False,False,Lutein and antioxidant  cost (£),1000 patients,lplutein,Lutein and antioxidant  cost (£) per 1000 patients
+ccg_data_lpminocycline,Items which should not routinely be prescribed in primary care - minocycline,lowpriority,False,False,Minocycline cost (£),1000 patients,lpminocycline,Minocycline cost (£) per 1000 patients
+ccg_data_lpneedles,Items which should not routinely be prescribed in primary care - insulin pen needles costing ≥£5 per 100 needles,lowpriority,False,False,Higher cost pen needles cost (£),1000 patients,lpneedles,Higher cost pen needles cost (£) per 1000 patients
+ccg_data_lpomega3,Items which should not routinely be prescribed in primary care - omega-3 fatty acid compounds (excluding icosapent ethyl [Vazkepa®]),lowpriority,False,False,Omega-3 cost (£),1000 patients,lpomega3,Omega-3 cost (£) per 1000 patients
+ccg_data_lpoxycodone,Items which should not routinely be prescribed in primary care - oxycodone and naloxone combination product,lowpriority,False,False,Oxycodone and naloxone combination cost (£),1000 patients,lpoxycodone,Oxycodone and naloxone combination cost (£) per 1000 patients
+ccg_data_lpperindopril,Items which should not routinely be prescribed in primary care - perindopril arginine,lowpriority,False,False,Perindopril arginine cost (£),1000 patients,lpperindopril,Perindopril arginine cost (£) per 1000 patients
+ccg_data_lprubefacients,"Items which should not routinely be prescribed in primary care - rubefacients, benzydamine, mucopolysaccharide and cooling products",lowpriority,False,False,Rubefacients cost (£),1000 patients,lprubefacients,Rubefacients cost (£) per 1000 patients
+ccg_data_lpsilkgarments,Items which should not routinely be prescribed in primary care - silk garments,lowpriority,False,False,Silk garments (£),1000 patients,lpsilkgarments,Silk garments (£) per 1000 patients
+ccg_data_lptramadolpara,Items which should not routinely be prescribed in primary care - paracetamol and tramadol combination,lowpriority,False,False,Paracetamol and tramadol combination cost (£),1000 patients,lptramadolpara,Paracetamol and tramadol combination cost (£) per 1000 patients
+ccg_data_lptravelvacs,Items which should not routinely be prescribed in primary care - travel vaccines,lowpriority,False,False,Travel vaccines cost (£),1000 patients,lptravelvacs,Travel vaccines cost (£) per 1000 patients
+ccg_data_lptrimipramine,Items which should not routinely be prescribed in primary care - trimipramine,lowpriority,False,False,Trimipramine cost (£),1000 patients,lptrimipramine,Trimipramine cost (£) per 1000 patients
+ccg_data_lpzomnibus,Items which should not routinely be prescribed in primary care - all items,core,False,False,cost (£),1000 patients,lpzomnibus,cost (£) per 1000 patients
+ccg_data_methotrexate,Methotrexate 10 mg tablets ,core,,True,Items for 10mg methotrexate tablets,Items for 2.5mg and 10mg methotrexate tablets,methotrexate,Items for 10mg methotrexate tablets per Items for 2.5mg and 10mg methotrexate tablets
+ccg_data_nhse_bgts,Blood glucose testing strips not included in NHS England commissioning recommendations,core,,True,BGTS prescriptions for strips not included in guidance,All BGTS prescriptions,nhse_bgts,BGTS prescriptions for strips not included in guidance per All BGTS prescriptions
+ccg_data_nhse_lancets,Blood glucose testing lancets not included in NHS England commissioning recommendations,core,,True,Prescriptions for lancets not included in guidance,All lancets prescriptions,nhse_lancets,Prescriptions for lancets not included in guidance per All lancets prescriptions
+ccg_data_opioidome,Prescribing of opioids (total oral morphine equivalence),core,false,False,Total opioids prescribed (in OME mg),1000 patients,opioidome,Total opioids prescribed (in OME mg) per 1000 patients
+ccg_data_opioidper1000,High dose opioids per 1000 patients,core,False,False,High dose opioid items,1000 patients,opioidper1000,High dose opioid items per 1000 patients
+ccg_data_opioidspercent,High dose opioid items as percentage regular opioids,core,False,True,High dose opioid items,All opioid items,opioidspercent,High dose opioid items per All opioid items
+ccg_data_other_lipid_modifying_drugs,"Bile acid sequestrants, fibrates, nicotinic acid, and omega 3 fatty acids",core,false,False,Cost of selected items (£),1000 patients,other_lipid_modifying_drugs,Cost of selected items (£) per 1000 patients
+ccg_data_ppidose,Higher dose Proton Pump Inhibitors (PPIs),core,,True,Higher dose PPI items (excluding liquids),All PPI items (excluding liquids),ppidose,Higher dose PPI items (excluding liquids) per All PPI items (excluding liquids)
+ccg_data_pregabalinmg,Prescribing of pregabalin (total mg),core,,False,Total pregabalin prescribed (in milligrams),1000 patients,pregabalinmg,Total pregabalin prescribed (in milligrams) per 1000 patients
+ccg_data_probiotics,Probiotics that have been removed from the drug tariff,core,,False,Probiotics cost (£),1000 patients,probiotics,Probiotics cost (£) per 1000 patients
+ccg_data_saba,Short acting beta agonist inhalers,core,false,True,SABA quantity,ICS and SABA quantity,saba,SABA quantity per ICS and SABA quantity
+ccg_data_semagglutidequantity,Possible excess quantities of semaglutide,core,,True,Number of pens on prescription of four or more,total number of pens,semagglutidequantity,Number of pens on prescription of four or more per total number of pens
+ccg_data_seven_day_prescribing,Seven Day Prescribing for Long Term Conditions,core,,True,seven day quantities,total quantities,seven_day_prescribing,seven day quantities per total quantities
+ccg_data_sildenafil,High-cost drugs for erectile dysfunction,core,,True,Drugs for erectile dysfunction excl generic sildenafil tablets items,Drugs for erectile dysfunction items,sildenafil,Drugs for erectile dysfunction excl generic sildenafil tablets items per Drugs for erectile dysfunction items
+ccg_data_silver,Silver dressings,core,,True,Silver dressing items,All dressing items,silver,Silver dressing items per All dressing items
+ccg_data_solublepara,Soluble/effervescent forms of paracetamol and co-codamol,core,,True,Soluble paracetamol and co-codamol,All paracetamol and co-codamol tabs and caps,solublepara,Soluble paracetamol and co-codamol per All paracetamol and co-codamol tabs and caps
+ccg_data_statinintensity,Low and medium intensity statins,core,,True,Low and medium intensity statin items,All statins items,statinintensity,Low and medium intensity statin items per All statins items
+ccg_data_toothpaste,Toothpaste Prescribing,core,,False,Toothpaste cost (£),1000 patients,toothpaste,Toothpaste cost (£) per 1000 patients
+ccg_data_uti_antibiotics_3_day,Antibiotic stewardship: three-day courses for uncomplicated UTIs,core,,True,Antibiotic items for more than 3 days,Antibiotic items,uti_antibiotics_3_day,Antibiotic items for more than 3 days per Antibiotic items
+ccg_data_vitbper1000,Vitamin B complex per 1000 patients,core,,False,Vitamin B complex items,1000 patients,vitbper1000,Vitamin B complex items per 1000 patients

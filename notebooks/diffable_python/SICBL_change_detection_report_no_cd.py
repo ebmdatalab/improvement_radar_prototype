@@ -126,7 +126,7 @@ def plot_percentiles(ax, deciles_lidocaine):
             label_seen.append("decile")
         ax.plot(data["month"], data["rate"], style["line"], linewidth=style["linewidth"], label=label)
 
-def plot_org_data(org, data, deciles, percentage):
+def plot_org_data(org, data, deciles, percentage, y_string):
     """Plot data for an organization along with deciles, medians, and change detection."""
     fig, ax = plt.subplots(figsize=(10, 6))
     
@@ -138,7 +138,7 @@ def plot_org_data(org, data, deciles, percentage):
     df_subset = df_subset.sort_values(by="month")
     ax.plot(df_subset["month"], df_subset["rate"], linewidth=2, color="red", label="Organisation Rate")
     
-    ax.set_ylabel('Rate', size=18)
+    ax.set_ylabel(y_string, size=14)
     if percentage: 
         ax.yaxis.set_major_formatter(mtick.PercentFormatter(xmax=1.0)) #  if percentage then use percentage formatter
     ax.spines['top'].set_visible(False)
@@ -194,7 +194,6 @@ class DataFrameProcessor:
                 initial_count = filtered_df['code'].nunique()
                 filtered_df = filter_func(filtered_df)
                 if filtered_df.empty:
-                    print(f"After applying {conf_key}, no organisations are left.")
                     break
                 self._print_change_counts(conf_key, initial_count, filtered_df['code'].nunique())
         
@@ -289,8 +288,9 @@ for row in df[df['name'].str.contains('.json')].itertuples(index=True): #iterate
         json_df = pd.concat([json_df,norm_df], axis=0, ignore_index=True) # concatentates into single dataframe
         json_df['table_id'] = 'ccg_data_' + df['name'].str.split('.').str[0].copy()
 tags_df = json_df.explode('tags') # explode json so each tag is on seperate line
-core_df = tags_df[['table_id', 'name', 'tags', 'radar_exclude', 'is_percentage']].copy() # create smaller df based on tags_df
+core_df = tags_df[['table_id', 'name', 'tags', 'radar_exclude', 'is_percentage','numerator_short', 'denominator_short']].copy() # create smaller df based on tags_df
 core_df['measure_name'] = core_df['table_id'].apply(lambda x: x.replace('ccg_data_', '')) # remove `ccg_data_` from measure_name for use in URL
+core_df['y_string'] = core_df['numerator_short'] + ' per ' +  core_df['denominator_short']
 measure_list = core_df[((core_df['tags'].str.contains('core')) | (core_df['tags'].str.contains('lowpriority'))) & (core_df['radar_exclude'] != 'True')] #filter to only core measures where `radar_exclude` is not true
 measure_list.to_csv(DATA_FOLDER / 'measure_list.csv', index=False)  #save measure_list
 
@@ -373,6 +373,7 @@ for m in measure_list['measure_name']:
     measure_link = f"https://openprescribing.net/measure/{m}"
     measure_description = measure_list.loc[measure_list["measure_name"] == m, "name"]
     percentage = measure_list.loc[measure_list["measure_name"] == m, "is_percentage"].item() # create percentage flag for formatting
+    y_string = measure_list.loc[measure_list["measure_name"] == m, "y_string"].item() # create percentage flag for formatting
     if len(measure_description) > 0:
         measure_description=measure_description.iloc[0]
         
@@ -396,8 +397,11 @@ for m in measure_list['measure_name']:
                 sicbl_link = f"https://openprescribing.net/measure/{m}/sicbl/{ccg}"
                 ccg_name = ccg_names.loc[ccg_names["code"]==ccg, "name"].values[0]
                 display(Markdown(f'<h4><a href={sicbl_link}>{ccg_name}</a></h4>'))
-                fig = plot_org_data(ccg, data, deciles, percentage)
+                fig = plot_org_data(ccg, data, deciles, percentage, y_string)
                 
              
         else:
             display(Markdown("No organisations met the technical criteria for detecting substantial change on this measure."))
+# -
+
+
