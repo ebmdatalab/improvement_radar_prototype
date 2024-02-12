@@ -125,6 +125,23 @@ def plot_percentiles(ax, deciles_lidocaine):
         if "decile" not in label_seen and percentile != 50:
             label_seen.append("decile")
         ax.plot(data["month"], data["rate"], style["line"], linewidth=style["linewidth"], label=label)
+        
+def format_label(label):
+    if pd.isna(label):
+        return "rate"  # Return "rate" if label is NaN
+    try:
+        label_str = str(label)  # Convert label to string
+        label_length = len(label_str)  # Get the length of the label
+    except TypeError:
+        return "rate"  # Return "rate" if label is not convertible to string
+    if label_length == 0:
+        return "rate"
+    if label_length > 30:  # Adjust the threshold length as needed
+        middle_index = label_length // 2
+        last_space_index = label_str.rfind(' ', 0, middle_index)  # Find the last space before the middle index
+        if last_space_index != -1:  # If a space was found
+            return label_str[:last_space_index] + '\n' + label_str[last_space_index+1:]  # Split at the last space
+    return label_str
 
 def plot_org_data(org, data, deciles, percentage, y_string):
     """Plot data for an organization along with deciles, medians, and change detection."""
@@ -138,7 +155,7 @@ def plot_org_data(org, data, deciles, percentage, y_string):
     df_subset = df_subset.sort_values(by="month")
     ax.plot(df_subset["month"], df_subset["rate"], linewidth=2, color="red", label="Organisation Rate")
     
-    ax.set_ylabel(y_string, size=14)
+    ax.set_ylabel(format_label(y_string), size=14)
     if percentage: 
         ax.yaxis.set_major_formatter(mtick.PercentFormatter(xmax=1.0)) #  if percentage then use percentage formatter
     ax.spines['top'].set_visible(False)
@@ -150,6 +167,7 @@ def plot_org_data(org, data, deciles, percentage, y_string):
     plt.tight_layout()
     plt.show()
     plt.close(fig)
+
 
 
 
@@ -288,9 +306,8 @@ for row in df[df['name'].str.contains('.json')].itertuples(index=True): #iterate
         json_df = pd.concat([json_df,norm_df], axis=0, ignore_index=True) # concatentates into single dataframe
         json_df['table_id'] = 'ccg_data_' + df['name'].str.split('.').str[0].copy()
 tags_df = json_df.explode('tags') # explode json so each tag is on seperate line
-core_df = tags_df[['table_id', 'name', 'tags', 'radar_exclude', 'is_percentage','numerator_short', 'denominator_short']].copy() # create smaller df based on tags_df
+core_df = tags_df[['table_id', 'name', 'tags', 'radar_exclude', 'is_percentage','y_label']].copy() # create smaller df based on tags_df
 core_df['measure_name'] = core_df['table_id'].apply(lambda x: x.replace('ccg_data_', '')) # remove `ccg_data_` from measure_name for use in URL
-core_df['y_string'] = core_df['numerator_short'] + ' per ' +  core_df['denominator_short']
 measure_list = core_df[((core_df['tags'].str.contains('core')) | (core_df['tags'].str.contains('lowpriority'))) & (core_df['radar_exclude'] != 'True')] #filter to only core measures where `radar_exclude` is not true
 measure_list.to_csv(DATA_FOLDER / 'measure_list.csv', index=False)  #save measure_list
 
@@ -373,7 +390,7 @@ for m in measure_list['measure_name']:
     measure_link = f"https://openprescribing.net/measure/{m}"
     measure_description = measure_list.loc[measure_list["measure_name"] == m, "name"]
     percentage = measure_list.loc[measure_list["measure_name"] == m, "is_percentage"].item() # create percentage flag for formatting
-    y_string = measure_list.loc[measure_list["measure_name"] == m, "y_string"].item() # create percentage flag for formatting
+    y_string = measure_list.loc[measure_list["measure_name"] == m, "y_label"].item() # create percentage flag for formatting
     if len(measure_description) > 0:
         measure_description=measure_description.iloc[0]
         
@@ -402,6 +419,6 @@ for m in measure_list['measure_name']:
              
         else:
             display(Markdown("No organisations met the technical criteria for detecting substantial change on this measure."))
-# -
+# +
 
 
