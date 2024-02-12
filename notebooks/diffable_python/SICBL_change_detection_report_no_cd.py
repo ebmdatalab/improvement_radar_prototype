@@ -24,13 +24,18 @@ import pandas as pd
 import numpy as np
 from IPython.display import Markdown, display
 import matplotlib.pyplot as plt
-
+from ebmdatalab import bq
+import os
+import json
+from pandas import json_normalize
+import shutil
+import matplotlib.ticker as mtick
 
 DATA_FOLDER = Path("data/ccg_data_")
 GITHUB_API_URL = 'https://api.github.com'
 REPO_OWNER = 'ebmdatalab'
 REPO_NAME = 'openprescribing'
-PATH = 'openprescribing/measure_definitions'
+PATH = 'openprescribing/measures/definitions'
 CONTENT_URL = f'{GITHUB_API_URL}/repos/{REPO_OWNER}/{REPO_NAME}/contents/{PATH}'
 
 
@@ -70,30 +75,6 @@ def load_cache(cache_path):
     if cache_path.exists():
         return pd.read_csv(cache_path)
     return None
-
-def get_measures_info(url, use_cache=True):
-    """Get measure information from a given URL with optional caching."""
-    measure_cache_path = DATA_FOLDER / "measure_info_cache.csv"
-    
-    if use_cache:
-        cached_data = load_cache(measure_cache_path)
-        if cached_data is not None:
-            return cached_data
-
-    file_list = fetch_from_url(url)
-    if not file_list:
-        return pd.DataFrame()
-
-    filtered_files = filter_json_files(file_list)
-    measure_names = extract_measure_names(filtered_files)
-
-    name_df = pd.DataFrame.from_dict(measure_names, orient='index', columns=['name'])
-    name_df = name_df.reset_index()
-    name_df.columns = ["measure_name", "name"]
-
-    cache_data(name_df, measure_cache_path)
-
-    return name_df
 
 def compute_deciles(measure_table, groupby_col, values_col, has_outer_percentiles=False):
     """
@@ -145,7 +126,7 @@ def plot_percentiles(ax, deciles_lidocaine):
             label_seen.append("decile")
         ax.plot(data["month"], data["rate"], style["line"], linewidth=style["linewidth"], label=label)
 
-def plot_org_data(org, data, deciles):
+def plot_org_data(org, data, deciles, percentage):
     """Plot data for an organization along with deciles, medians, and change detection."""
     fig, ax = plt.subplots(figsize=(10, 6))
     
@@ -158,6 +139,8 @@ def plot_org_data(org, data, deciles):
     ax.plot(df_subset["month"], df_subset["rate"], linewidth=2, color="red", label="Organisation Rate")
     
     ax.set_ylabel('Rate', size=18)
+    if percentage: 
+        ax.yaxis.set_major_formatter(mtick.PercentFormatter(xmax=1.0)) #  if percentage then use percentage formatter
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
     ax.grid(True)
@@ -294,14 +277,63 @@ config = {
 }
 
 # +
-ccg_names = pd.read_csv("data/ccg_names.csv")
-measure_list = pd.read_csv(DATA_FOLDER / 'measure_list.csv', usecols=['table_id'])
+#get latest measures list and refresh data
+res = requests.get('https://api.github.com/repos/ebmdatalab/openprescribing/contents/openprescribing/measures/definitions') #uses GitHub API to get list of all files listed in measure definitions - defaults to main branch
+data = res.text #creates text from API result
+df = pd.read_json(data) #turns JSON from API result into dataframe
+json_df = pd.DataFrame() #creates blank dataframe
+for row in df[df['name'].str.contains('.json')].itertuples(index=True): #iterates through rows, and continues if file is .json
+        url = (getattr(row, "download_url")) #gets URL from API request  
+        data = json.loads(requests.get(url).text) #gets JSON from measure definition URL
+        norm_df = pd.json_normalize(data, max_level=1) #normalises measure definition JSON into dataframe
+        json_df = pd.concat([json_df,norm_df], axis=0, ignore_index=True) # concatentates into single dataframe
+        json_df['table_id'] = 'ccg_data_' + df['name'].str.split('.').str[0].copy()
+tags_df = json_df.explode('tags') # explode json so each tag is on seperate line
+core_df = tags_df[['table_id', 'name', 'tags', 'radar_exclude', 'is_percentage']].copy() # create smaller df based on tags_df
+core_df['measure_name'] = core_df['table_id'].apply(lambda x: x.replace('ccg_data_', '')) # remove `ccg_data_` from measure_name for use in URL
+measure_list = core_df[((core_df['tags'].str.contains('core')) | (core_df['tags'].str.contains('lowpriority'))) & (core_df['radar_exclude'] != 'True')] #filter to only core measures where `radar_exclude` is not true
+measure_list.to_csv(DATA_FOLDER / 'measure_list.csv', index=False)  #save measure_list
 
-measure_info = get_measures_info(CONTENT_URL)
-
-measure_list = measure_list.merge(measure_info, how = 'left', left_on='table_id', right_on='ccg_data_' + measure_info['measure_name']) #merge with title names from JSON scraper
-measures = [m.replace("ccg_data_", "") for m in measure_list["table_id"]]
+#create for next loop to go through each table name in the previous query
+for name in measure_list['table_id']:
+    
+    sql = """
+    SELECT
+      month, 
+      pct_id as code, 
+      numerator, 
+      denominator, 
+    FROM
+      `ebmdatalab.measures.{}` AS a
+    """
+    
+    sql = sql.format(name) #using python string to add table_name to SQL
+    #concatenate each table name into single file during for next loop
+    bq.cached_read(sql, os.path.join(DATA_FOLDER, "{}", "bq_cache.csv").format(name), use_cache=False)
+    
+#delete any unused measure folders
+for folder in os.listdir(DATA_FOLDER):
+    if os.path.isdir(os.path.join(DATA_FOLDER, folder)):  # Check if it's a directory
+        if folder not in measure_list['table_id'].values:  # Check if folder is not in DataFrame
+            # Delete the folder and its contents
+            folder_path = os.path.join(DATA_FOLDER, folder)
+            shutil.rmtree(folder_path)
 # -
+
+#get SICBL names
+sql = """
+    SELECT
+      code, 
+      name 
+    FROM
+      ebmdatalab.hscic.ccgs
+    WHERE
+      name IS NOT NULL
+    GROUP BY
+      code, 
+      name     
+    """
+ccg_names = bq.cached_read(sql, os.path.join(DATA_FOLDER, "ccg_names.csv"), use_cache=False)
 
 # # OpenPrescribing Improvement Radar
 #
@@ -326,7 +358,8 @@ measures = [m.replace("ccg_data_", "") for m in measure_list["table_id"]]
 # +
 display(Markdown('## Table of Contents'))
 
-for m in measures:
+measure_list = measure_list.sort_values(by='name') # sort by name
+for m in measure_list['measure_name']:
     measure_link = f"https://openprescribing.net/measure/{m}"
     measure_description = measure_list.loc[measure_list["measure_name"] == m, "name"]
     if len(measure_description) > 0:
@@ -335,10 +368,11 @@ for m in measures:
         display(Markdown(f'<a href=#{m}>- {measure_description}</a>'))
         
         
-for m in measures:
+for m in measure_list['measure_name']:
     
     measure_link = f"https://openprescribing.net/measure/{m}"
     measure_description = measure_list.loc[measure_list["measure_name"] == m, "name"]
+    percentage = measure_list.loc[measure_list["measure_name"] == m, "is_percentage"].item() # create percentage flag for formatting
     if len(measure_description) > 0:
         measure_description=measure_description.iloc[0]
         
@@ -362,7 +396,7 @@ for m in measures:
                 sicbl_link = f"https://openprescribing.net/measure/{m}/sicbl/{ccg}"
                 ccg_name = ccg_names.loc[ccg_names["code"]==ccg, "name"].values[0]
                 display(Markdown(f'<h4><a href={sicbl_link}>{ccg_name}</a></h4>'))
-                fig = plot_org_data(ccg, data, deciles)
+                fig = plot_org_data(ccg, data, deciles, percentage)
                 
              
         else:
