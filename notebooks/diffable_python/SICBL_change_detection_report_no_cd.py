@@ -31,6 +31,7 @@ import json
 from pandas import json_normalize
 import shutil
 import matplotlib.ticker as mtick
+import pandas_gbq
 
 DATA_FOLDER = Path("data/ccg_data_")
 GITHUB_API_URL = 'https://api.github.com'
@@ -355,8 +356,9 @@ sql = """
       code, 
       name     
     """
-ccg_names = bq.cached_read(sql, os.path.join(DATA_FOLDER, "ccg_names.csv"), use_cache=False)
+ccg_names = bq.cached_read(sql, os.path.join(DATA_FOLDER, "ccg_names.csv"), use_cache=False, progress_bar_type=None)
 
+# +
 tool_summary = """# OpenPrescribing Improvement Radar
 
 ## What this tool does
@@ -381,6 +383,7 @@ These pilot results are provided for the interest of advanced users, although we
 We are keen to hear your feedback on this tool and how you use it. You can do this by emailing us at bennett@phc.ox.ac.uk. Please do not include patient identifiable information in your feedback.
 
 <b>This tool currently uses prescribing data between """ + first_month.strftime("%B %Y") + " and " + latest_month.strftime("%B %Y") +".  We plan to update the tool every 3 months.</b>"
+# -
 
 
 display(Markdown(tool_summary))
