@@ -8,7 +8,7 @@ ccg_data_cgm_sensors,Prescribing of continuous glucose monitoring sensors,core,T
 ccg_data_ciclosporin,Ciclosporin and tacrolimus oral preparations prescribed generically,core,False,True,Percentage of ciclosporin and tacrolimus items prescribed generically,ciclosporin
 ccg_data_cmpaperpt,Cost of milk formulae for Cow's Milk Protein Allergy (CMPA) per listed patients aged 0-4,core,,False,Cost (£) per patient aged 0-4y,cmpaperpt
 ccg_data_coproxamol,Co-proxamol,core,,False,,coproxamol
-ccg_data_diltiazem,Diltiazem preparations (>60mg) prescribed generically,core,,True,,diltiazem
+ccg_data_diltiazem,Diltiazem preparations (>60mg) prescribed generically,core,False,True,Percentage of MR diltiazem items (>60mg) prescribed generically,diltiazem
 ccg_data_dipyridamole,Prescribing of dipyridamole,core,,True,,dipyridamole
 ccg_data_doxy_100_6_qty,Antibiotic stewardship: courses for doxycycline 100mg greater than 6 capsules/dispersible tablets,core,,True,Percentage of doxycycline 100mg items with quantity >6,doxy_100_6_qty
 ccg_data_edoxaban,Proportion of Direct Acting Oral Anticoagulants (DOACs) not prescribed as edoxaban or generic apixaban,core,False,True,Percentage DOACs not prescribed as edoxaban or generic apixaban,edoxaban
@@ -48,23 +48,23 @@ ccg_data_lptramadolpara,Items which should not routinely be prescribed in primar
 ccg_data_lptravelvacs,Items which should not routinely be prescribed in primary care - travel vaccines,lowpriority,False,False,Travel vaccines cost (£) per 1000 patients,lptravelvacs
 ccg_data_lptrimipramine,Items which should not routinely be prescribed in primary care - trimipramine,lowpriority,False,False,Trimipramine cost (£) per 1000 patients,lptrimipramine
 ccg_data_lpzomnibus,Items which should not routinely be prescribed in primary care - all items,core,False,False,Cost (£) per 1000 patients,lpzomnibus
-ccg_data_methotrexate,Methotrexate 10 mg tablets ,core,,True,,methotrexate
-ccg_data_nhse_bgts,Blood glucose testing strips not included in NHS England commissioning recommendations,core,,True,,nhse_bgts
-ccg_data_nhse_lancets,Blood glucose testing lancets not included in NHS England commissioning recommendations,core,,True,,nhse_lancets
-ccg_data_opioidome,Prescribing of opioids (total oral morphine equivalence),core,false,False,,opioidome
-ccg_data_opioidper1000,High dose opioids per 1000 patients,core,False,False,,opioidper1000
-ccg_data_opioidspercent,High dose opioid items as percentage regular opioids,core,False,True,,opioidspercent
-ccg_data_other_lipid_modifying_drugs,"Bile acid sequestrants, fibrates, nicotinic acid, and omega 3 fatty acids",core,false,False,,other_lipid_modifying_drugs
+ccg_data_methotrexate,Methotrexate 10 mg tablets ,core,false,True,Items for 10mg methotrexate tablets per Items for 2.5mg and 10mg methotrexate tablets,methotrexate
+ccg_data_nhse_bgts,Blood glucose testing strips not included in NHS England commissioning recommendations,core,False,True,Percentage of blood glucose test strip items not in line with NHS England recommendations,nhse_bgts
+ccg_data_nhse_lancets,Blood glucose testing lancets not included in NHS England commissioning recommendations,core,,True,Percentage of blood glucose test lancet items not in line with NHS England recommendations,nhse_lancets
+ccg_data_opioidome,Prescribing of opioids (total oral morphine equivalence),core,false,False,Oral morphine equivalent (mg) per 1000 patients,opioidome
+ccg_data_opioidper1000,High dose opioids per 1000 patients,core,False,False,Items per 1000 patients,opioidper1000
+ccg_data_opioidspercent,High dose opioid items as percentage regular opioids,core,False,True,Percentage of regular opioid items prescribed as high strength,opioidspercent
+ccg_data_other_lipid_modifying_drugs,"Bile acid sequestrants, fibrates, nicotinic acid, and omega 3 fatty acids",core,false,False,Cost (£) per 1000 patients,other_lipid_modifying_drugs
 ccg_data_ppidose,Higher dose Proton Pump Inhibitors (PPIs),core,,True,,ppidose
-ccg_data_pregabalinmg,Prescribing of pregabalin (total mg),core,,False,,pregabalinmg
-ccg_data_probiotics,Probiotics that have been removed from the drug tariff,core,,False,,probiotics
-ccg_data_saba,Short acting beta agonist inhalers,core,false,True,,saba
-ccg_data_semagglutidequantity,Possible excess quantities of semaglutide,core,,True,,semagglutidequantity
+ccg_data_pregabalinmg,Prescribing of pregabalin (total mg),core,false,False,Pregabalin (mg) per 1000 patients,pregabalinmg
+ccg_data_probiotics,Probiotics that have been removed from the drug tariff,core,false,False,Cost (£) per 1000 patients,probiotics
+ccg_data_saba,Short acting beta agonist inhalers,core,false,True,Percentage of inhalers (ICS and SABA) prescribed as SABA,saba
+ccg_data_semagglutidequantity,Possible excess quantities of semaglutide,core,false,True,Percentage of semaglutide items with quantity >3,semagglutidequantity
 ccg_data_seven_day_prescribing,Seven Day Prescribing for Long Term Conditions,core,,True,,seven_day_prescribing
 ccg_data_sildenafil,High-cost drugs for erectile dysfunction,core,,True,,sildenafil
-ccg_data_silver,Silver dressings,core,,True,,silver
-ccg_data_solublepara,Soluble/effervescent forms of paracetamol and co-codamol,core,,True,,solublepara
-ccg_data_statinintensity,Low and medium intensity statins,core,,True,,statinintensity
-ccg_data_toothpaste,Toothpaste Prescribing,core,,False,,toothpaste
-ccg_data_uti_antibiotics_3_day,Antibiotic stewardship: three-day courses for uncomplicated UTIs,core,,True,,uti_antibiotics_3_day
-ccg_data_vitbper1000,Vitamin B complex per 1000 patients,core,,False,,vitbper1000
+ccg_data_silver,Silver dressings,core,false,True,Percentage of dressing items issued as silver dressings,silver
+ccg_data_solublepara,Soluble/effervescent forms of paracetamol and co-codamol,core,false,True,Percentage of paracetamol and co-codamol tablets/capsules prescribed as soluble form,solublepara
+ccg_data_statinintensity,Low and medium intensity statins,core,false,True,Perecentage of statin items prescribed as low or medium intensity,statinintensity
+ccg_data_toothpaste,Toothpaste Prescribing,core,false,False,Cost (£) per 1000 patients,toothpaste
+ccg_data_uti_antibiotics_3_day,Antibiotic stewardship: three-day courses for uncomplicated UTIs,core,false,True,Percentage of antibiotics commonly used for UTIs prescribed as more than a 3 day quantity,uti_antibiotics_3_day
+ccg_data_vitbper1000,Vitamin B complex per 1000 patients,core,false,False,Items per 1000 patients,vitbper1000
