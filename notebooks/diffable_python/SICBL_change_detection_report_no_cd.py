@@ -313,8 +313,8 @@ measure_list = core_df[((core_df['tags'].str.contains('core')) | (core_df['tags'
 measure_list.to_csv(DATA_FOLDER / 'measure_list.csv', index=False)  #save measure_list
 
 #create for next loop to go through each table name in the previous query
+get_date = True
 for name in measure_list['table_id']:
-    
     sql = """
     SELECT
       month, 
@@ -324,10 +324,14 @@ for name in measure_list['table_id']:
     FROM
       `ebmdatalab.measures.{}` AS a
     """
-    
     sql = sql.format(name) #using python string to add table_name to SQL
     #concatenate each table name into single file during for next loop
-    bq.cached_read(sql, os.path.join(DATA_FOLDER, "{}", "bq_cache.csv").format(name), use_cache=False)
+    measure_df = bq.cached_read(sql, os.path.join(DATA_FOLDER, "{}", "bq_cache.csv").format(name), use_cache=False)
+    if get_date:
+        latest_month = measure_df['month'].max()
+        first_month = measure_df['month'].min()
+        get_date = False
+
     
 #delete any unused measure folders
 for folder in os.listdir(DATA_FOLDER):
@@ -353,25 +357,32 @@ sql = """
     """
 ccg_names = bq.cached_read(sql, os.path.join(DATA_FOLDER, "ccg_names.csv"), use_cache=False)
 
-# # OpenPrescribing Improvement Radar
-#
-# ## What this tool does
-# This tool identifies sub-ICB locations (SICBLs) which have shown substantial improvement across each of our OpenPrescribing measures. The five SICBLs with the largest improvement are reported. We hope this will stimulate discussion with areas that have made effective changes so that successful strategies can be shared.
-#
-# ## How it works
-# The tool currently uses the following criteria to identify improvement:
-# * SICBLs needed to be, on average, in the highest 20% during the first 6 months of the time period shown.
-# * SICBLs needed to improve to be, on average, in the lowest 50% of SICBLs during the last 6 months of the period shown.
-# * The rate of the measure has to decrease by at least 5% across the time period shown (calculated as the difference between the average rate for the first 6 months and the last 6 months).
-# * There needed to be, on average, at least 50 prescription items written.
-#
-# We are continuing to review how we might further optimise these criteria to detect even more interesting changes in future. For example, we may be able to introduce elements of a ‘trend indicator saturation’ methodology (which we have used in previous research). You can find more information on this [here](https://www.bmj.com/content/367/bmj.l5205), including a podcast on our work with Professor Ben Goldacre.
-#
-# ## Interpretation notes
-# These pilot results are provided for the interest of advanced users, although we don't know how relevant they are in practice. There is substantial variation in prescribing behaviours, across various different areas of medicine. Some variation can be explained by demographic changes, or local policies or guidelines, but much of the remaining variation is less easy to explain.
-#
-# We are keen to hear your feedback on this tool and how you use it. You can do this by emailing us at bennett@phc.ox.ac.uk. Please do not include patient identifiable information in your feedback.
-#
+tool_summary = """# OpenPrescribing Improvement Radar
+
+<details><summary><b>What this tool does</b></summary>
+
+This tool identifies sub-ICB locations (SICBLs) which have shown substantial improvement across each of our OpenPrescribing measures. The five SICBLs with the largest improvement are reported. We hope this will stimulate discussion with areas that have made effective changes so that successful strategies can be shared.</details>
+
+<details><summary><b>How it works</b></summary>
+The tool currently uses the following criteria to identify improvement:
+   
+* SICBLs needed to be, on average, in the highest 20% during the first 6 months of the time period shown.
+* SICBLs needed to improve to be, on average, in the lowest 50% of SICBLs during the last 6 months of the period shown.
+* The rate of the measure has to decrease by at least 5% across the time period shown (calculated as the difference between the average rate for the first 6 months and the last 6 months).
+* There needed to be, on average, at least 50 prescription items written.
+
+We are continuing to review how we might further optimise these criteria to detect even more interesting changes in future. For example, we may be able to introduce elements of a ‘trend indicator saturation’ methodology (which we have used in previous research). You can find more information on this [here](https://www.bmj.com/content/367/bmj.l5205), including a podcast on our work with Professor Ben Goldacre.</details>
+
+<details><summary><b>Interpretation notes</b></summary>
+    
+These pilot results are provided for the interest of advanced users, although we don't know how relevant they are in practice. There is substantial variation in prescribing behaviours, across various different areas of medicine. Some variation can be explained by demographic changes, or local policies or guidelines, but much of the remaining variation is less easy to explain.</details>
+
+We are keen to hear your feedback on this tool and how you use it. You can do this by emailing us at bennett@phc.ox.ac.uk. Please do not include patient identifiable information in your feedback.
+
+<b>This tool currently uses prescribing data between """ + first_month.strftime("%B %Y") + " and " + latest_month.strftime("%B %Y") +".  We plan to update the tool every 3 months.</b>"
+
+
+display(Markdown(tool_summary))
 
 # +
 display(Markdown('## Table of Contents'))
@@ -420,6 +431,13 @@ for m in measure_list['measure_name']:
              
         else:
             display(Markdown("No organisations met the technical criteria for detecting substantial change on this measure."))
+# + [markdown]
+#
 # -
+
+
+a=1.23
+
+# a is {{a}}
 
 
