@@ -23,7 +23,7 @@ import requests
 from pathlib import Path
 import pandas as pd
 import numpy as np
-from IPython.display import Markdown, display
+from IPython.display import Markdown, display, HTML
 import matplotlib.pyplot as plt
 from ebmdatalab import bq
 import os
@@ -389,16 +389,12 @@ We are keen to hear your feedback on this tool and how you use it. You can do th
 display(Markdown(tool_summary))
 
 # +
-display(Markdown('## Table of Contents'))
-
-measure_list = measure_list.sort_values(by='name') # sort by name
-for m in measure_list['measure_name']:
-    measure_link = f"https://openprescribing.net/measure/{m}"
-    measure_description = measure_list.loc[measure_list["measure_name"] == m, "name"]
-    if len(measure_description) > 0:
-        measure_description=measure_description.iloc[0]
-    
-        display(Markdown(f'<a href=#{m}>- {measure_description}</a>'))
+measure_links = "".join([
+    f'<li><a href="#{m}">{measure_description.iloc[0]}</a></li>'
+    for m in measure_list['measure_name']
+    if (measure_description := measure_list.loc[measure_list["measure_name"] == m, "name"]).any()
+])
+display(HTML(f"<details><summary>Table of Contents</summary><ul>{measure_links}</ul></details>"))
         
         
 for m in measure_list['measure_name']:
