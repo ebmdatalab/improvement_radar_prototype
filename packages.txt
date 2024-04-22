@@ -1,1 +1,8 @@
 # APT PACKAGES TO BE INSTALLED
+
+# The `change_detection` Python package in fact does most of its work in R,
+# using the `r2py` interface, so we need R to be available
+r-base
+
+# This is required for `r2py` to build
+libopenblas-dev # dfdsf
