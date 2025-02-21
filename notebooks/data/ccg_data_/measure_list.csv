@@ -11,9 +11,9 @@ ccg_data_cgm_sensors,Prescribing of continuous glucose monitoring sensors,core,T
 ccg_data_ciclosporin,Ciclosporin and tacrolimus oral preparations prescribed generically,core,False,True,Percentage of ciclosporin and tacrolimus items prescribed generically,ciclosporin
 ccg_data_cmpaperpt,Cost of milk formulae for Cow's Milk Protein Allergy (CMPA) per listed patients aged 0-4,core,,False,Cost (£) per patient aged 0-4y,cmpaperpt
 ccg_data_diltiazem,Diltiazem preparations (>60mg) prescribed generically,core,False,True,Percentage of MR diltiazem items (>60mg) prescribed generically,diltiazem
+ccg_data_doacs_nhse,Proportion of Direct Acting Oral Anticoagulants (DOACs) not prescribed as generic rivaroxaban or generic apixaban tablets,core,False,True,Percentage DOACs not prescribed as generic rivaroxaban or generic apixaban tablets,doacs_nhse
 ccg_data_doxy_100_6_qty,Antibiotic stewardship: courses for doxycycline 100mg greater than 6 capsules/dispersible tablets,core,,True,Percentage of doxycycline 100mg items with quantity >6,doxy_100_6_qty
-ccg_data_edoxaban,Proportion of Direct Acting Oral Anticoagulants (DOACs) not prescribed as edoxaban or generic apixaban,core,False,True,Percentage DOACs not prescribed as edoxaban or generic apixaban,edoxaban
-ccg_data_environmental_inhalers,Environmental impact of inhalers - Prescribing of the less environmentally friendly Metered Dose Inhaler (MDI) (excluding salbutamol),core,False,True,Percentage of non-salbutamol inhalers prescribed as MDI,environmental_inhalers
+ccg_data_environmental_inhalers,Environmental impact of inhalers - Prescribing of Metered Dose Inhaler (MDI) (excluding salbutamol),core,False,True,Percentage of non-salbutamol inhalers prescribed as MDI,environmental_inhalers
 ccg_data_excess_pens,Possible excess quantities of semaglutide and tirzepatide,core,False,True,Percentage of semaglutide and tirzepatide items with quantity >3,excess_pens
 ccg_data_fluoroquinolones_list,Antibiotic stewardship: fluoroquinolone items per 1000 patients,core,False,False,Prescriptions for fluoroquinolones per 1000 patients,fluoroquinolones_list
 ccg_data_fungal,Topical treatment of fungal nail infections,core,False,False,Items per 1000 patients,fungal
@@ -65,4 +65,5 @@ ccg_data_solublepara,Soluble/effervescent forms of paracetamol and co-codamol,co
 ccg_data_statinintensity,Low and medium intensity statins,core,False,True,Perecentage of statin items prescribed as low or medium intensity,statinintensity
 ccg_data_toothpaste,Toothpaste Prescribing,core,False,False,Cost (£) per 1000 patients,toothpaste
 ccg_data_uti_antibiotics_3_day,Antibiotic stewardship: three-day courses for uncomplicated UTIs,core,False,True,Percentage of antibiotics commonly used for UTIs prescribed as more than a 3 day quantity,uti_antibiotics_3_day
+ccg_data_vitamind,Prescribing of non-combination colecalciferol preparations,core,False,False,Colecalciferol (£) per 1000 patients,vitamind
 ccg_data_vitbper1000,Vitamin B complex per 1000 patients,core,False,False,Items per 1000 patients,vitbper1000
