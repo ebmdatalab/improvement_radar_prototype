@@ -2,6 +2,7 @@ table_id,name,tags,radar_exclude,is_percentage,y_label,measure_name
 ccg_data_aafpercent,Prescribing of Amino Acid Formula (AAF) and Extensively Hydrolysed Formula (EHF)),core,,True,Percentage of CMPA products (EHF + AAF) prescribed as AAF,aafpercent
 ccg_data_all_antibiotics,Antibiotic stewardship: volume of antibiotic prescribing,core,False,False,Oral antibiotic items per 1000 patients,all_antibiotics
 ccg_data_amox_500_15_caps,Antibiotic stewardship: courses for amoxicillin 500mg greater than 15 capsules,core,False,True,Percentage of amoxicillin 500mg capsule items with quantity >15,amox_500_15_caps
+ccg_data_aware_antibiotics,"Antibiotic stewardship: Access, Watch and Reserve (AWaRe) antibiotics",core,False,True,Percentage of antibiotic prescriptions that are for Watch and Reserve group antibiotics,aware_antibiotics
 ccg_data_bdzadq,Anxiolytics and Hypnotics: Average Daily Quantity per item,core,False,False,ADQ per item,bdzadq
 ccg_data_bdzper1000,Anxiolytics and Hypnotics: Average Daily Quantity per 1000 patients,core,False,False,ADQ per 1000 patients,bdzper1000
 ccg_data_broad_spectrum,"Antibiotic stewardship: co-amoxiclav, cephalosporins & quinolones",core,False,True,"Percentage of antibiotic prescriptions that are for co-amoxiclav, cephalosporins or quinolones",broad_spectrum
@@ -10,6 +11,7 @@ ccg_data_carbon_salbutamol,Environmental impact of inhalers - average carbon foo
 ccg_data_cgm_sensors,Prescribing of continuous glucose monitoring sensors,core,True,False,CGM sensors per 1000 patients,cgm_sensors
 ccg_data_ciclosporin,Ciclosporin and tacrolimus oral preparations prescribed generically,core,False,True,Percentage of ciclosporin and tacrolimus items prescribed generically,ciclosporin
 ccg_data_cmpaperpt,Cost of milk formulae for Cow's Milk Protein Allergy (CMPA) per listed patients aged 0-4,core,,False,Cost (£) per patient aged 0-4y,cmpaperpt
+ccg_data_dapagliflozin,Proportion of sodium-glucose co-transporter 2 (SGLT-2) inhibitors (including combination products) not prescribed as generic dapagliflozin tablets,core,False,True,Percentage SGLT-2 inhibitors items not prescribed as generic dapagliflozin tablets,dapagliflozin
 ccg_data_diltiazem,Diltiazem preparations (>60mg) prescribed generically,core,False,True,Percentage of MR diltiazem items (>60mg) prescribed generically,diltiazem
 ccg_data_doacs_nhse,Proportion of Direct Acting Oral Anticoagulants (DOACs) not prescribed as generic rivaroxaban or generic apixaban tablets,core,False,True,Percentage DOACs not prescribed as generic rivaroxaban or generic apixaban tablets,doacs_nhse
 ccg_data_doxy_100_6_qty,Antibiotic stewardship: courses for doxycycline 100mg greater than 6 capsules/dispersible tablets,core,,True,Percentage of doxycycline 100mg items with quantity >6,doxy_100_6_qty
@@ -22,13 +24,13 @@ ccg_data_glutenfree,Prescribing of gluten free products,core,False,False,Cost (�
 ccg_data_highcost_ed,High-cost drugs for erectile dysfunction,core,False,False,Spend on high cost ED drugs per 1000 pts,highcost_ed
 ccg_data_icsdose,High dose inhaled corticosteroids,core,False,True,Percentage of high dose ICS items,icsdose
 ccg_data_injectable_antibiotics,Antibiotic stewardship: Injectable preparations for the treatment of infection,core,True,False,,injectable_antibiotics
+ccg_data_insulin_detemir,Discontinuation of insulin detemir,core,True,False,Insulin detemir items per 1000 patients,insulin_detemir
 ccg_data_ktt13_nsaids_ibuprofen,Non-preferred NSAIDs and COX-2 inhibitors,core,False,True,Percentage of all NSAID items which aren't naproxen and ibuprofen,ktt13_nsaids_ibuprofen
 ccg_data_lpaliskiren,Items which should not routinely be prescribed in primary care - aliskiren,lowpriority,False,False,Aliskiren cost (£) per 1000 patients,lpaliskiren
 ccg_data_lpamiodarone,Items which should not routinely be prescribed in primary care - amiodarone,lowpriority,False,False,Amiodarone cost (£) per 1000 patients,lpamiodarone
 ccg_data_lpbathshoweremollients,Items which should not routinely be prescribed in primary care  - bath and shower emollients,lowpriority,False,False,Bath and shower emollients cost (£) per 1000 patients,lpbathshoweremollients
 ccg_data_lpcoprox,Items which should not routinely be prescribed in primary care - co-proxamol,lowpriority,False,False,Co-proxamol cost (£) per 1000 patients,lpcoprox
 ccg_data_lpdosulepin,Items which should not routinely be prescribed in primary care - dosulepin,lowpriority,False,False,Dosulepin cost (£) per 1000 patients,lpdosulepin
-ccg_data_lpdoxazosin,Items which should not routinely be prescribed in primary care - doxazosin modified release,lowpriority,False,False,Doxazosin modified release cost (£) per 1000 patients,lpdoxazosin
 ccg_data_lpdronedarone,Items which should not routinely be prescribed in primary care - dronedarone,lowpriority,False,False,Dronedarone cost (£) per 1000 patients,lpdronedarone
 ccg_data_lpfentanylir,Items which should not routinely be prescribed in primary care - immediate release fentanyl,lowpriority,False,False,Fentanyl immediate release cost (£) per 1000 patients,lpfentanylir
 ccg_data_lpglucosamine,Items which should not routinely be prescribed in primary care - glucosamine and chondroitin,lowpriority,False,False,Glucosamine and chondroitin cost (£) per 1000 patients,lpglucosamine
@@ -49,12 +51,13 @@ ccg_data_lptravelvacs,Items which should not routinely be prescribed in primary 
 ccg_data_lptrimipramine,Items which should not routinely be prescribed in primary care - trimipramine,lowpriority,False,False,Trimipramine cost (£) per 1000 patients,lptrimipramine
 ccg_data_lpzomnibus,Items which should not routinely be prescribed in primary care - all items,core,False,False,Cost (£) per 1000 patients,lpzomnibus
 ccg_data_methotrexate,Methotrexate 10 mg tablets ,core,False,True,Items for 10mg methotrexate tablets per Items for 2.5mg and 10mg methotrexate tablets,methotrexate
+ccg_data_morphine_solution_high_quantity,Prescribing of morphine sulphate oral solution in quantities over 300ml,core,False,True,Proportion of morphine sulphate oral solution with quantity of over 300ml,morphine_solution_high_quantity
+ccg_data_morphine_solution_list,Volume of immediate release oral morphine liquid prescribed,core,False,False,Milligrams per 1000 patients,morphine_solution_list
 ccg_data_nhse_bgts,Blood glucose testing strips not included in NHS England commissioning recommendations,core,False,True,Percentage of blood glucose test strip items not in line with NHS England recommendations,nhse_bgts
 ccg_data_nhse_lancets,Blood glucose testing lancets not included in NHS England commissioning recommendations,core,,True,Percentage of blood glucose test lancet items not in line with NHS England recommendations,nhse_lancets
 ccg_data_opioidome,Prescribing of opioids (total oral morphine equivalence),core,False,False,Oral morphine equivalent (mg) per 1000 patients,opioidome
 ccg_data_opioidper1000,High dose opioids per 1000 patients,core,False,False,Items per 1000 patients,opioidper1000
 ccg_data_opioidspercent,High dose opioid items as percentage regular opioids,core,False,True,Percentage of regular opioid items prescribed as high strength,opioidspercent
-ccg_data_other_lipid_modifying_drugs,"Bile acid sequestrants, fibrates, nicotinic acid, and omega 3 fatty acids",core,False,False,Cost (£) per 1000 patients,other_lipid_modifying_drugs
 ccg_data_ppidose,Higher dose Proton Pump Inhibitors (PPIs),core,False,True,Higher dose PPI items vs all PPI items (excluding liquids),ppidose
 ccg_data_pregabalinmg,Prescribing of pregabalin (total mg),core,False,False,Pregabalin (mg) per 1000 patients,pregabalinmg
 ccg_data_probiotics,Probiotics that have been removed from the drug tariff,core,False,False,Cost (£) per 1000 patients,probiotics
@@ -63,7 +66,9 @@ ccg_data_seven_day_prescribing,Seven Day Prescribing for Long Term Conditions,co
 ccg_data_silver,Silver dressings,core,False,True,Percentage of dressing items issued as silver dressings,silver
 ccg_data_solublepara,Soluble/effervescent forms of paracetamol and co-codamol,core,False,True,Percentage of paracetamol and co-codamol tablets/capsules prescribed as soluble form,solublepara
 ccg_data_statinintensity,Low and medium intensity statins,core,False,True,Perecentage of statin items prescribed as low or medium intensity,statinintensity
+ccg_data_sulfadiazine,Sulfadiazine items per 1000 patients,core,True,False,Sulfadiazine items per 1000 patients,sulfadiazine
 ccg_data_toothpaste,Toothpaste Prescribing,core,False,False,Cost (£) per 1000 patients,toothpaste
 ccg_data_uti_antibiotics_3_day,Antibiotic stewardship: three-day courses for uncomplicated UTIs,core,False,True,Percentage of antibiotics commonly used for UTIs prescribed as more than a 3 day quantity,uti_antibiotics_3_day
 ccg_data_vitamind,Prescribing of non-combination colecalciferol preparations,core,False,False,Colecalciferol (£) per 1000 patients,vitamind
 ccg_data_vitbper1000,Vitamin B complex per 1000 patients,core,False,False,Items per 1000 patients,vitbper1000
+ccg_data_xlpdoxazosin,Items which should not routinely be prescribed in primary care - doxazosin modified release,lowpriority,False,False,Doxazosin modified release cost (£) per 1000 patients,xlpdoxazosin
