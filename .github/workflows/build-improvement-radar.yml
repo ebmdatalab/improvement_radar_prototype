@@ -1,0 +1,51 @@
+name: Build Improvement Radar HTML
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Build Docker image
+        run: docker build -t improvement-radar .
+
+      - name: Run notebook and generate HTML
+        run: |
+          docker run --rm \
+            -v "$GITHUB_WORKSPACE:/workspace" \
+            improvement-radar \
+            bash -c '
+              cd /workspace/notebooks &&
+              jupyter nbconvert \
+                --to html \
+                --execute \
+                sicbl-improvement-radar.ipynb \
+                --no-input \
+                --ExecutePreprocessor.timeout=-1
+            '
+
+      - name: Check generated HTML
+        run: |
+          ls -lh notebooks/sicbl-improvement-radar.html
+
+      - name: Commit generated HTML
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add notebooks/sicbl-improvement-radar.html
+
+          if git diff --cached --quiet; then
+            echo "No changes to generated HTML."
+          else
+            git commit -m "Update Improvement Radar HTML"
+            git push
+          fi
