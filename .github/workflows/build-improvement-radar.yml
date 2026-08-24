@@ -14,7 +14,14 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v4
+
+      - name: Create BigQuery credentials
+        env:
+          BQ_SERVICE_ACCOUNT: ${{ secrets.BQ_SERVICE_ACCOUNT }}
+        run: |
+          printf '%s' "$BQ_SERVICE_ACCOUNT" > "$RUNNER_TEMP/bq-service-account.json"
+          chmod 600 "$RUNNER_TEMP/bq-service-account.json"
 
       - name: Build Docker image
         run: docker build -t improvement-radar .
@@ -23,6 +30,7 @@ jobs:
         run: |
           docker run --rm \
             -v "$GITHUB_WORKSPACE:/workspace" \
+            -v "$RUNNER_TEMP/bq-service-account.json:/workspace/bq-service-account.json:ro" \
             improvement-radar \
             bash -c '
               cd /workspace/notebooks &&
@@ -37,6 +45,11 @@ jobs:
       - name: Check generated HTML
         run: |
           ls -lh notebooks/sicbl-improvement-radar.html
+
+      - name: Remove BigQuery credentials
+        if: always()
+        run: |
+          rm -f "$RUNNER_TEMP/bq-service-account.json"
 
       - name: Commit generated HTML
         run: |
