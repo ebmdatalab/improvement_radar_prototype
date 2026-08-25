@@ -1,9 +1,7 @@
 name: Build Improvement Radar HTML
 
 on:
-  push:
-    branches:
-      - github-action
+  workflow_dispatch:
 
 permissions:
   contents: write
