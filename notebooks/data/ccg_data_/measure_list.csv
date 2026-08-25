@@ -1,5 +1,6 @@
 table_id,name,tags,radar_exclude,is_percentage,y_label,measure_name
 ccg_data_aafpercent,Prescribing of Amino Acid Formula (AAF) and Extensively Hydrolysed Formula (EHF)),core,,True,Percentage of CMPA products (EHF + AAF) prescribed as AAF,aafpercent
+ccg_data_air_mart_inhalers,AIR/MART inhalers,core,False,True,Percentage of corticosteroid containing inhaler doses not licensed for AIR/MART therapy,air_mart_inhalers
 ccg_data_all_antibiotics,Antibiotic stewardship: volume of antibiotic prescribing,core,False,False,Oral antibiotic items per 1000 patients,all_antibiotics
 ccg_data_amox_500_15_caps,Antibiotic stewardship: courses for amoxicillin 500mg greater than 15 capsules,core,False,True,Percentage of amoxicillin 500mg capsule items with quantity >15,amox_500_15_caps
 ccg_data_aware_antibiotics,"Antibiotic stewardship: Access, Watch and Reserve (AWaRe) antibiotics",core,False,True,Percentage of antibiotic prescriptions that are for Watch and Reserve group antibiotics,aware_antibiotics
