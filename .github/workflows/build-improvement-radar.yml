@@ -42,6 +42,11 @@ jobs:
                 --ExecutePreprocessor.timeout=-1
             '
 
+      - name: Add custom stylesheet
+        run: |
+          sed -i '/<style type="text\/css">/i <link rel="stylesheet" href="custom.css">' \
+            notebooks/sicbl-improvement-radar.html
+
       - name: Check generated HTML
         run: |
           ls -lh notebooks/sicbl-improvement-radar.html
