@@ -59,7 +59,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add -A notebooks/sicbl-improvement-radar.html data/ccg_data_
+          git add -A -- . ':!bq-service-account.json'
 
           if git diff --cached --quiet; then
             echo "No changes to generated HTML."
